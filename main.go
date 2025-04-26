@@ -238,7 +238,6 @@ func GeneratePureGoShim(functions []Function, outdir, inputFilePath, packageName
 	builder.WriteString("\t\"unsafe\"\n")
 	builder.WriteString("\t\"github.com/ebitengine/purego\"\n")
 	builder.WriteString(")\n\n")
-	builder.WriteString("var lib uintptr\n\n")
 
 	// Generate function declarations
 	for _, f := range functions {

@@ -22,21 +22,21 @@ This tool parses C header files using the Tree-sitter parser and generates Go bi
 ## Installation
 
 ```bash
-go get github.com/kamefrede/treesitter-purego-bindgen
+go get github.com/kamefrede/c-purego-bindgen
 ```
 
 Or clone the repository and build:
 
 ```bash
-git clone https://github.com/kamefrede/treesitter-purego-bindgen.git
-cd treesitter-purego-bindgen
+git clone https://github.com/kamefrede/c-purego-bindgen.git
+cd c-purego-bindgen
 go build
 ```
 
 ## Usage
 
 ```bash
-./treesitter-purego-bindgen --pkg yourpackagename --outdir ./output input.h
+./c-purego-bindgen --pkg yourpackagename --outdir ./output input.h
 ```
 
 ### Parameters
@@ -48,7 +48,7 @@ go build
 ### Example
 
 ```bash
-./treesitter-purego-bindgen --pkg raylib --outdir ./raylib raylib.h
+./c-purego-bindgen --pkg raylib --outdir ./raylib raylib.h
 ```
 
 ## Generated Code
@@ -68,8 +68,6 @@ import (
 	"unsafe"
 	"github.com/ebitengine/purego"
 )
-
-var lib uintptr
 
 var InitWindow func(width int32, height int32, title string)
 var CloseWindow func()
@@ -100,13 +98,13 @@ func main() {
     }
 
     // Initialize the bindings
-    raylib.InitRaylib(lib)
+    raylib.Initraylib(lib)
 
     // Use the library functions
     raylib.InitWindow(800, 600, "Hello from PureGo!")
     defer raylib.CloseWindow()
 
-    // Your application code...
+    // The rest of the owl.
 }
 ```
 
