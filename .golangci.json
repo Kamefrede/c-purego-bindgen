@@ -1,0 +1,23 @@
+{
+    "$schema": "https://golangci-lint.run/jsonschema/golangci.jsonschema.json",
+    "version": "2",
+    "linters": {
+        "default": "standard"
+    },
+    "formatters": {
+        "enable": ["gofmt", "gofumpt"],
+        "settings": {
+            "gofmt": {
+                "rewrite-rules": [
+                    {
+                        "replacement": "any",
+                        "pattern": "interface{}"
+                    }
+                ]
+            },
+            "gofumpt": {
+                "extra-rules": true
+            }
+        }
+    }
+}
